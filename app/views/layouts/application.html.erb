@@ -13,7 +13,7 @@
 
   <div class="right">
     <% if user_signed_in? %>
-        <span> <%= t(:hello)%> <%= current_user.email %> </span>
+        <span> <%= t(:hello) %> <%= current_user.email %> </span>
         <%= link_to t(:log_out), destroy_user_session_path, :method => :delete %>
     <% else %>
         <%= link_to t(:sign_in), new_user_session_path %>
@@ -25,8 +25,7 @@
   </div>
 </div>
 
-
-<%= yield %>
+<div class="app_yield"> <%= yield %> </div>
 
 </body>
 </html>

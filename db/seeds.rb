@@ -5,17 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+AdminUser.delete_all
 AdminUser.create!(email: 'admin@example.com', password: '12345678', password_confirmation: '12345678')
 
-
-Worker.create!(name: 'Mad Max', task: 'Build a car')
-Worker.create!(name: 'Luke S.', task: 'Use the Force')
-Worker.create!(name: 'Hulk', task: 'Smash something')
-
+User.delete_all
 
 user = User.new
-user.email = 'user@example.com'
+user.email = 'Hulk@example.com'
+user.name = 'Hulk'
+user.task = 'Smash something'
+user.password = '12345678'
+user.password_confirmation = '12345678'
+user.save!
+
+user = User.new
+user.email = 'Skywalker@example.com'
+user.name = 'Luke S.'
+user.task = 'Use the Force'
+user.password = '12345678'
+user.password_confirmation = '12345678'
+user.save!
+
+user = User.new
+user.email = 'MadMax@example.com'
+user.name = 'Mad Max'
+user.task = 'Build a car'
 user.password = '12345678'
 user.password_confirmation = '12345678'
 user.save!
