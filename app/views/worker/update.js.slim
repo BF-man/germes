@@ -1,0 +1,17 @@
+
+- if @error
+  | tag = $("#label_for_
+  = @worker_id
+  | ");
+  | tag.text("
+  = @error
+  | ");
+  | tag.css({'color':'black', 'background-color':'red'}).animate({'color':'white','background-color':'white'}, 4000);
+- else
+  | tag = $("#label_for_
+  = @worker_id
+  | ");
+  | tag.text("
+  = t(:updated)
+  | ");
+  | tag.css({'color':'black', 'background-color':'yellow'}).animate({'color':'white','background-color':'white'}, 4000);
