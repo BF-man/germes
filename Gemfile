@@ -42,6 +42,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  gem 'rspec-rails', '~> 3.0'
 end
 
 gem 'slim-rails'
@@ -50,4 +51,10 @@ gem 'devise'
 gem 'bullet', :group => 'development'
 gem 'mysql2', '~> 0.3.18'
 gem 'jquery-ui-rails'
-gem 'rubocop'
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+end
