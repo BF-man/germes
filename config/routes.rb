@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :worker, only: [:index, :update]
+  resources :user, only: [:index, :update]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'worker#index'
+  root 'user#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
