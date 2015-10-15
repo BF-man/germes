@@ -9,8 +9,8 @@ $(document).on "ready", ->
 
 make_data = (item) ->
   return {} =
-  user:{
-    task: item.val()}
-  id: $(item).attr("id")
+         user:{
+           task: item.val()}
+         id: $(item).attr("id")
 
 

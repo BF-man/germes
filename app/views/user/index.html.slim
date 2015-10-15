@@ -5,7 +5,7 @@ h1
   div
     .left id = "name"
       = user.name
-    = input_or_div(user_signed_in?, user.id, user.task, current_user)
+    = input_or_div(user.id, user.task)
     label id ='label_for_#{ user.id }'
   br
 
