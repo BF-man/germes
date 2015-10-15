@@ -27,5 +27,3 @@ class UserController < ApplicationController
     @users = User.order(:name)
   end
 end
-
-
