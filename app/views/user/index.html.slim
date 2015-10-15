@@ -1,0 +1,11 @@
+h1
+  =t(:users)
+
+- @users.each do |user|
+  div
+    .left id = "name"
+      = user.name
+    = input_or_div(user.id, user.task)
+    label id ='label_for_#{ user.id }'
+  br
+

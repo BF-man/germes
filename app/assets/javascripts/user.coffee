@@ -3,13 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "ready", ->
-    $('input').on "blur", ->
-      $.ajax({method: "PATCH", url: "worker/"+$(this).attr("id"), data: make_data($(this)), dataType:"script"})
+  $('.task').on "blur", ->
+    $.ajax({method: "PATCH", url: "user/"+$(this).attr("id"), data: make_data($(this)), dataType:"script"})
 
 
 make_data = (item) ->
   return {} =
-         worker:{
+         user:{
            task: item.val()}
          id: $(item).attr("id")
 

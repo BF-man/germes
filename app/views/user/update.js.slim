@@ -1,15 +1,15 @@
 
 - if @error
   | tag = $("#label_for_
-  = @worker_id
+  = @user_id
   | ");
   | tag.text("
   = @error
   | ");
-  | tag.css({'color':'black', 'background-color':'red'}).animate({'color':'white','background-color':'white'}, 4000);
+  | tag.css({'color':'white','background-color':'red'}).animate({'background-color':'white'}, 4000);
 - else
   | tag = $("#label_for_
-  = @worker_id
+  = @user_id
   | ");
   | tag.text("
   = t(:updated)

@@ -21,7 +21,8 @@
 
 en:
   error_update_text: "Update error!"
-  workers: "Workers"
+  error_edit_denied: "You can edit only your task!"
+  users: "Users"
   hello: "Hello"
   log_out: "Log out"
   sign_in: "Sign in"
