@@ -14,7 +14,6 @@ class UserController < ApplicationController
     else
       @error = t(:error_edit_denied)
     end
-
   end
 
   private
