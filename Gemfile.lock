@@ -151,6 +151,8 @@ GEM
     pg (0.18.3)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
+    pundit (1.0.1)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   jquery-ui-rails
   mysql2 (~> 0.3.18)
   pg
+  pundit
   rails (= 4.2.0)
   rails_12factor
   rspec-rails (~> 3.0)

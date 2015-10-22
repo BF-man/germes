@@ -49,9 +49,9 @@ gem 'slim-rails'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
 gem 'bullet', :group => 'development'
-gem 'mysql2', '~> 0.3.18'
 gem 'jquery-ui-rails'
 gem 'exception_notification'
+gem 'pundit'
 
 group :test do
   gem 'cucumber-rails', :require => false
