@@ -2,7 +2,7 @@ module UserHelper
 
   def input_or_div( id, conent)
 
-    input_attibutes = { class: "task", value: conent, id: id }
+    input_attibutes = { class: "task width-max-avail", value: conent, id: id }
     if user_signed_in? && current_user.present?
       current_user.id.equal?(id) || current_user.director? ? tag("input", input_attibutes) :  tag("input", input_attibutes.merge(disabled: "disabled"))
     else

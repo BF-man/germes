@@ -1,0 +1,86 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+  min-width: 450px; /* suppose you want minimun width of 400px */
+  width: auto !important;  /* Firefox will set width as auto */
+  width: 450px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input {
+  border: 1px solid #C8D8E6;
+  border-radius: 3px;
+  outline: none;
+  padding: 3px;
+}
+
+.row {
+  margin: 5px;
+  padding: 3px;
+}
+
+.width-max-avail {
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.navbar {
+  color: whitesmoke;
+  white-space: nowrap;
+}
+
+.navbar-inner {
+  min-width: 400px;
+}
+
+.yield {
+  margin: 10px;
+}
+/* header */
+
+.name {
+  min-width: 100px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+  &:hover {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+}
+
+
