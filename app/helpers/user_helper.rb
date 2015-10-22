@@ -4,7 +4,7 @@ module UserHelper
 
     input_attibutes = { class: "task", value: conent, id: id }
     if user_signed_in? && current_user.present?
-      current_user.id.equal?(id) ? tag("input", input_attibutes) :  tag("input", input_attibutes.merge(disabled: "disabled"))
+      current_user.id.equal?(id) || current_user.director? ? tag("input", input_attibutes) :  tag("input", input_attibutes.merge(disabled: "disabled"))
     else
        content_tag("div", conent)
     end
