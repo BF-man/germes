@@ -52,6 +52,7 @@ gem 'bullet', :group => 'development'
 gem 'jquery-ui-rails'
 gem 'exception_notification'
 gem 'pundit'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 group :test do
   gem 'cucumber-rails', :require => false
