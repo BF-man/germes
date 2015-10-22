@@ -7,25 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header">
-  <h1><%= t(:germes) %></h1>
+<div class="container">
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="row">
 
+          <div class="col-xs-4">
+            <%= link_to t(:germes), root_path, id: "logo" %>
+          </div>
 
-  <div class="right">
-    <% if user_signed_in? %>
-        <span> <%= t(:hello) %> <%= current_user.email %> </span>
-        <%= link_to t(:log_out), destroy_user_session_path, :method => :delete %>
-    <% else %>
-        <%= link_to t(:sign_in), new_user_session_path %> <%= t(:or)%> <%= link_to t(:sign_up), new_user_registration_path %>
-    <% end %>
-  </div>
-  </br>
-  <div class="right">
-    <%= link_to t(:admin_page), admin_user_session_path%>
-  </div>
+          <div class="col-xs-8">
+              <nav>
+                <div class="nav pull-right">
+                  <% if user_signed_in? %>
+                    <span> <%= t(:hello) %> <%= current_user.email %> </span>
+                    <%= link_to t(:log_out), destroy_user_session_path, :method => :delete %>
+                  <% else %>
+                    <%= link_to t(:sign_in), new_user_session_path %> <%= t(:or)%> <%= link_to t(:sign_up), new_user_registration_path %>
+                  <% end %>
+                </div>
+                </br>
+                <div class="nav pull-right">
+                  <%= link_to t(:admin_page), admin_user_session_path%>
+                </div>
+              </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container yield"> <%= yield %> </div>
 </div>
-
-<div class="app_yield"> <%= yield %> </div>
-
 </body>
 </html>

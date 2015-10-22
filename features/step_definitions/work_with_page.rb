@@ -13,8 +13,12 @@ end
 
 When(/^я вижу "(.*)"$/) do |words|
   words.split(', ').each do |word|
-    page.has_content?(word)
+    page.assert_text(word)
   end
+end
+
+When(/^я вижу поле с текстом "(.*)"$/) do |word|
+  page.driver.browser.execute_script("$('.task :input').filter(function(){return this.value=='#{word}'}).val()")
 end
 
 When(/^я изменяю задачу пользователя "(.*)" на "(.*)"$/) do |user, new_task|
