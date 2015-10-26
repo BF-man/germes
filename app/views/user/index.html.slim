@@ -1,9 +1,6 @@
-.container
-  - @users.each do |user|
-    .row id = user.name_without_spaces
-      .col-xs-2 class = "name"
-        = user.name
-      .col-xs-6
-        = input_or_div(user.id, user.task)
-      .col-xs-2
-        label id ='label_for_#{ user.id }'
+- @users.each do |user|
+  .row id = user.name_without_spaces
+    .col-md-2 class = "name bold"
+      = user.name.size < 17 ? user.name : user.name[0..16] + ".."
+    .col-md-8
+      = choose_tag(user.id, user.task)

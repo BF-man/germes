@@ -1,12 +1,11 @@
 module UserHelper
 
-  def input_or_div( id, conent)
-
-    input_attibutes = { class: "task width-max-avail", value: conent, id: id }
-    if user_signed_in? && current_user.present?
-      current_user.id.equal?(id) || current_user.director? ? tag("input", input_attibutes) :  tag("input", input_attibutes.merge(disabled: "disabled"))
+  def choose_tag( id, content)
+    some_attributes = { class: "task width-max-avail", id: id }
+    if user_signed_in? && current_user.present? && (current_user.id.equal?(id) || current_user.director?)
+      text_area_tag("task", content, some_attributes)
     else
-       content_tag("div", conent)
+      content_tag("div", content)
     end
   end
 
