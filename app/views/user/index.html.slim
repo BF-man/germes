@@ -1,6 +1,6 @@
 - @users.each do |user|
   .row id = user.name_without_spaces
     .col-md-2 class = "name bold"
-      = user.name.size < 17 ? user.name : user.name[0..16] + ".."
+      = truncate(user.name, :length => 17, :omission => '...')
     .col-md-8
       = choose_tag(user.id, user.task)
