@@ -9,9 +9,6 @@ html {
 
 body {
   padding-top: 60px;
-  min-width: 450px; /* suppose you want minimun width of 400px */
-  width: auto !important;  /* Firefox will set width as auto */
-  width: 450px;
 }
 
 section {
@@ -26,7 +23,7 @@ input {
   border: 1px solid #C8D8E6;
   border-radius: 3px;
   outline: none;
-  padding: 3px;
+  padding: 3px 0px 3px 0px;
 }
 
 .row {
@@ -49,12 +46,7 @@ input {
 }
 
 .navbar {
-  color: whitesmoke;
   white-space: nowrap;
-}
-
-.navbar-inner {
-  min-width: 400px;
 }
 
 .yield {
@@ -63,8 +55,21 @@ input {
 /* header */
 
 .name {
-  min-width: 100px;
+  min-width: 145px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.stripped {
+  background-color: lavender;
+}
+
 
 #logo {
   float: left;
@@ -82,5 +87,35 @@ input {
     text-decoration: none;
   }
 }
+
+#error_row {
+  display: none;
+  background-color: #d82400;
+  font-size: 20px;
+}
+
+#error_label {
+  color: whitesmoke;
+  margin-bottom: 0px;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  div, li {
+    font-size: 20px;
+  }
+
+  .dropdown-header {
+    font-size: 15px;
+  }
+
+  #dropdownMenu1 {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
 
 

@@ -23,6 +23,10 @@ class UserController < ApplicationController
 
   private
   def users_to_show
-    @users = User.order(:name)
+    if current_user.present?
+      @users = User.order("name = '#{current_user.name}' desc, name asc")
+    else
+      @users = User.order(:name)
+    end
   end
 end
