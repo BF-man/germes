@@ -1,9 +1,6 @@
 
 - if @error
-  | tag = $("#label_for_
-  = @user_id
-  | ");
-  | tag.text("
+  | $("#error_label").text("
   = @error
   | ");
-  | tag.css({'color':'white','background-color':'red'}).animate({'background-color':'white'}, 4000);
+  | $("#error_row").show();
