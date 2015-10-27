@@ -1,6 +1,10 @@
-
-- if @error
-  | $("#error_label").text("
-  = @error
-  | ");
-  | $("#error_row").show();
+- broadcast "/user/update" do
+  - if @error
+    | $("#error_label").text("
+    = @error
+    | ");
+    | $("#error_row").show();
+  - else
+    - if @user
+      | $("##{@user.id}").text("#{@user.task}");
+      | $("##{@user.id}").val("#{@user.task}");
