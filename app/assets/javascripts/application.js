@@ -17,8 +17,9 @@
 //= require jquery-ui/effect-blind
 //= require bootstrap
 
+
 $(function() {
-    var faye = new Faye.Client('http://localhost:9292/faye');
+    var faye = new Faye.Client("http://faye-shrouded.herokuapp.com/faye");
     faye.subscribe("/user/update", function(data) {
         eval(data);
     });
