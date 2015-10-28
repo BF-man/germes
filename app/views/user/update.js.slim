@@ -6,5 +6,5 @@
     | $("#error_row").show();
   - else
     - if @user
-      | $("##{@user.id}").text("#{@user.task}");
-      | $("##{@user.id}").val("#{@user.task}");
+      | $("##{@user.id}:not(:focus)").text("#{@user.task}");
+      | $("##{@user.id}:not(:focus)").val("#{@user.task}");
