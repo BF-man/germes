@@ -3,3 +3,6 @@
   = @error
   | ");
   | $("#error_row").show();
+- else
+  | $('.showbill-div').text("");
+  | $('.showbill-div').append('#{auto_link(@showbill.description)}');
