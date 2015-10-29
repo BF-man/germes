@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, presence: true
+  validates :name, presence: true, :length => { :maximum => 255 }
+  validates :task, :length => { :maximum => 255 }
 
   def name_without_spaces
     name.gsub(/\s+/, '_')
