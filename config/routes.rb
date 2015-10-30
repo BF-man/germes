@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "user/registrations"}
 
   resources :user, only: [:index, :update]
-  resources :showbill, only: [:index, :update, :show]
+  resources :showbill, only: [:update]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
