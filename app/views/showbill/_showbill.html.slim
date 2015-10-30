@@ -1,8 +1,7 @@
-- @showbills.each do |showbill|
-  .row
-    .col-md-12 class = "showbill-div"
-      = auto_link(showbill.description)
-  .row
-    - if current_user.present?
-      .col-md-12
-        = text_area_tag("showbill", showbill.description,  {class: "showbill width-max-avail", id: showbill.id, hidden: "hidden"})
+.row
+  .col-md-12 class = "showbill-div"
+    = auto_link(@showbill)
+.row
+  - if current_user.present?
+    .col-md-12
+      = text_area_tag("showbill", @showbill,  {class: "showbill width-max-avail", hidden: "hidden"})
