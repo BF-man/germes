@@ -4,5 +4,6 @@
   | ");
   | $("#error_row").show();
 - else
+  | $("#error_row").hide();
   | $('.showbill-div').text("");
-  | $('.showbill-div').append('#{auto_link(@showbill.description)}');
+  | $('.showbill-div').append('#{auto_link(@showbill)}');

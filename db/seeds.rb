@@ -33,7 +33,3 @@ user.task = 'Build a car'
 user.password = '12345678'
 user.password_confirmation = '12345678'
 user.save!
-
-showbill = Showbill.new
-showbill.description = 'Some description'
-showbill.save!

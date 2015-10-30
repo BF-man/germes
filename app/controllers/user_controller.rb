@@ -28,6 +28,6 @@ class UserController < ApplicationController
     else
       @users = User.order(:name)
     end
-      @showbills = Showbill.order(:description)
+    @showbill = Showbill_singleton.instance.text
   end
 end
