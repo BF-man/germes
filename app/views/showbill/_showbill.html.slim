@@ -1,0 +1,7 @@
+.row
+  .col-md-12 class = "showbill-div"
+    = auto_link(@showbill)
+.row
+  - if current_user.present?
+    .col-md-12
+      = text_area_tag("showbill", @showbill,  {class: "showbill width-max-avail", hidden: "hidden"})
