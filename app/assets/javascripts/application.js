@@ -19,7 +19,7 @@
 
 
 $(function() {
-    var faye = new Faye.Client("http://faye-shrouded.herokuapp.com/faye");
+    var faye = new Faye.Client(faye_server_url);
     faye.subscribe("/user/update", function(data) {
         eval(data);
     });

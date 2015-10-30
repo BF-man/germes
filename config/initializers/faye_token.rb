@@ -1,1 +1,1 @@
-FAYE_TOKEN = "just_a_simple_faye_token"
+FAYE_TOKEN = "germes_tasks_channel"
