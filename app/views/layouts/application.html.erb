@@ -4,9 +4,13 @@
   <title> <%= t(:germes) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag  App.faye_js_url %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
+<script>
+  var faye_server_url = "<%= App.faye_server_url %>";
+</script>
 <body>
 <div class="container">
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -55,7 +59,6 @@
     </div>
   </div>
     <%= yield %>
-
 </div>
 </body>
 </html>

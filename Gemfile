@@ -45,15 +45,6 @@ group :development, :test do
   gem 'mysql2', '~> 0.3.18'
 end
 
-gem 'slim-rails'
-gem 'activeadmin', '~> 1.0.0.pre2'
-gem 'devise'
-gem 'bullet', :group => 'development'
-gem 'jquery-ui-rails'
-gem 'exception_notification'
-gem 'pundit'
-gem 'bootstrap-sass', '~> 3.3.5'
-
 group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
@@ -72,3 +63,9 @@ gem 'devise'
 gem 'bullet', :group => 'development'
 gem 'jquery-ui-rails'
 gem 'exception_notification'
+gem 'pundit'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'faye'
+gem 'thin'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'app'
