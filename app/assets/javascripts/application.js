@@ -23,4 +23,7 @@ $(function() {
     faye.subscribe("/user/update", function(data) {
         eval(data);
     });
+    faye.subscribe("/showbill/update", function(data) {
+        eval(data);
+    });
 });
