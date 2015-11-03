@@ -11,6 +11,7 @@ $(document).on "ready", ->
     if $('textarea').is('.showbill')
       text = $('.showbill-div').html().replace( /<br>/g,"\n")
       $('.showbill').text(disable_links(clean_text(text)))
+      $('.showbill').val(disable_links(clean_text(text)))
       $('.showbill').show().focus()
       $('.showbill-div').hide()
 
