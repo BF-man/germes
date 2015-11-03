@@ -1,6 +1,11 @@
-
 - if @error
   | $("#error_label").text("
   = @error
   | ");
   | $("#error_row").show();
+- else
+  | $("#error_row").hide();
+  - if @user
+    - broadcast "/user/update" do
+      | $("##{@user.id}:not(:focus)").text("#{@user.task}");
+      | $("##{@user.id}:not(:focus)").val("#{@user.task}");

@@ -5,7 +5,7 @@ module UserHelper
     if user_signed_in? && current_user.present? && (current_user.id.equal?(id) || current_user.director?)
       text_area_tag("task", content, some_attributes)
     else
-      content_tag("div", content)
+      content_tag("div", content, some_attributes)
     end
   end
 

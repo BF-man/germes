@@ -7,10 +7,10 @@ class UserController < ApplicationController
 
   def update
     @user_id = params[:id]
-    user = User.where(id: params[:id]).first
+    @user = User.where(id: params[:id]).first
 
-    if user.present? && (current_user.id.equal?(user.id) || current_user.director?)
-      @error = t(:error_update_text) unless user.update(user_params)
+    if @user.present? && (current_user.id.equal?(@user.id) || current_user.director?)
+      @error = t(:error_update_text) unless @user.update(user_params)
     else
       @error = t(:error_edit_denied)
     end

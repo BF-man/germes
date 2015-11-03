@@ -16,3 +16,11 @@
 //= require_tree .
 //= require jquery-ui/effect-blind
 //= require bootstrap
+
+
+$(function() {
+    var faye = new Faye.Client(faye_server_url);
+    faye.subscribe("/user/update", function(data) {
+        eval(data);
+    });
+});
