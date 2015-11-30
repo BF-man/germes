@@ -23,7 +23,7 @@ make_data = (item) ->
   return {} =
   showbill:{
     #we'll need description in one line. Replacing \n by <br> to don't lose them.
-    description: item.val().replace(/\n/g, "<br />")}
+    description: item.val().replace(/\n/g, "<br>")}
   id: $(item).attr("id")
 
 #extracts link_text from link_tag by deleting <a...> and </a>

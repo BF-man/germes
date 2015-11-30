@@ -1,4 +1,10 @@
 class ShowbillController < ApplicationController
+  require 'rails_autolink'
+
+  def index
+    @showbill = Showbill.order(:id).first
+    render json: {description: view_context.auto_link(@showbill.description)}, callback: params[:callback]
+  end
 
   def update
     @showbill = Showbill.where(id: params[:id]).first

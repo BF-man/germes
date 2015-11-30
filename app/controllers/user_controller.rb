@@ -3,13 +3,8 @@ class UserController < ApplicationController
   before_filter :users_to_show, :only => [:index]
 
   def index
-    @users = User.order(:name)
     respond_to do |format|
-      #if params[:callback]
-      #  format.js { render :json => {:users => @users.to_json}, :callback => params[:callback] }
-      #end
       format.html
-      #format.json {render json: @users}
       format.json { render json:  @users, callback: params[:callback] }
     end
   end

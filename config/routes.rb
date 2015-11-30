@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => {:registrations => "user/registrations"}
+  devise_for :users, :controllers => {:registrations => "user/registrations", :sessions => "user/sessions"}
 
   resources :user, only: [:index, :update]
-  resources :showbill, only: [:update]
+  resources :showbill, only: [:index, :update]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

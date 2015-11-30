@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-    <meta http-equiv="Access-Control-Allow-Origin" content="default-src *; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
-    -->
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
     <title> Germes </title>
     <link rel="stylesheet" media="all" href="assets/active_admin.css?body=1" data-turbolinks-track="true" />
@@ -12,14 +9,14 @@
     <script src="assets/application.js?body=1" data-turbolinks-track="true"></script>
     <script src="http://faye-shrouded.herokuapp.com/faye.js"></script>
     <script src="lib/handlebars-v4.0.4.js"></script>
+    <script src="lib/js-cookies.js"></script>
+    <!--
     <meta name="csrf-param" content="authenticity_token" />
-    <meta name="csrf-token" content="Say9nQ6R8IHuTizJdcHX/ztlgx6zKOXODZDh59vxo8XnRDfTIjKau/JB72faxK/kehFq5s/M2Riclrng7vcChg==" />
+    <meta name="csrf-token" content="Say9nQ6R8IHuTizJdcHX/ztlgx6zKOXODZDh59vxo8XnRDfTIjKau/JB72faxK/kehFq5s/M2Riclrng7vcChg==" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--
      <meta http-equiv="Access-Control-Allow-Origin" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' localhost:3000 faye-shrouded.herokuapp.com 192.168.33.211:3001">
     -->
-
-
 
  </head>
 
@@ -54,8 +51,8 @@
                      <span class="glyphicon glyphicon-align-justify"></span>
                    </button>
                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-                       <li role="presentation"> <a href="http://shrouded-sierra-7695.herokuapp.com/users/sign_in">Sign in</a> </li>
-                       <li role="presentation"> <a href="http://shrouded-sierra-7695.herokuapp.com/users/sign_up">Sign up</a> </li>
+                       <li role="presentation" id="sign_in" class="text-center"> Sign in </li>
+                       <li role="presentation" id="sign_up" class="text-center"> Sign up</li>
 
                    </ul>
                  </div>
@@ -69,45 +66,44 @@
      </div>
    </div>
  </header>
+
  <div class="row" id="error_row">
    <div class="col-xs-12 col-md-12">
      <label id="error_label" class="bold"> </label>
    </div>
  </div>
-   <div class="row">
- <div class="col-md-12 showbill-div">
-   We a gonna make some party bussines<br>some party <a href="https://github.com">https://github.com</a> and<br>ololo5
- </div>
+
+<div class="row">
+  <div id="showbill_yield" class="col-md-12 showbill-div"></div>
 </div>
 
 <div class="row">
+  <div id="content_yield"></div>
 </div>
-
-   <div class="content"></div>
-
-<script id="users_list_tpl" type="text/x-handlebars-template">
- {{#each this}}
-   <div class="row" id={{name}}>
-     <div class="col-md-2 name bold">
-       {{name}}
-     </div>
-     <div class="col-md-8">
-       <div class="task width-max-avail" id={{id}}>{{task}}</div>
-     </div>
-   </div>
- {{/each}}
-</script>
-
-   <ul class="updates">
-       <script id="template" type="text/x-handlebars-template">
-           <li>
-               <h2>{{name}}</h2>
-           </li>
-       </script>
-   </ul>
 
 </div>
 
-   <script src="js/app.js"></script>
+  <script id="users_list_tpl" type="text/x-handlebars-template">
+     {{#each this}}
+     <div class="row" id={{name}}>
+         <div class="col-md-2 name bold">
+             {{name}}
+         </div>
+         <div class="col-md-8">
+             <div class="task width-max-avail" id={{id}}>{{task}}</div>
+         </div>
+     </div>
+     {{/each}}
+  </script>
+
+  <script id="showbill_tpl" type="text/x-handlebars-template">
+      <div class="row">
+          <div class="col-md-12 showbill-div">
+              {{this.description}}
+          </div>
+      </div>
+  </script>
+
+ <script src="js/app.js"></script>
 </body>
 </html>

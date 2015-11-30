@@ -3,6 +3,8 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   before_filter :configure_permitted_parameters
 
+  respond_to :json
+
   protected
 
   # my custom fields are :name, :heard_how
